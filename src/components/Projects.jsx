@@ -1,5 +1,7 @@
 import { useState } from "react";
 import tourism from "../assets/images/tuerism.png";
+import bar from '../assets/images/bar.png'
+import coffee from '../assets/images/coffe.png';
 import {
   TbArrowUpRight,
   TbChevronRight,
@@ -13,7 +15,7 @@ import {
 const projects = [
   {
     id: 1,
-    image: "/projects/agri-market.jpg",
+    image: bar,
     categories: ["AI/ML", "DATA SCIENCE"],
     category: "ML + Data Analysis",
     categoryTag: "PLANNING SYSTEM",
@@ -113,25 +115,29 @@ const projects = [
   },
   {
     id: 4,
-    image: "/projects/task-suite.jpg",
+    image: coffee,
     categories: ["FULL-STACK", "BACKEND & SQL", "REST"],
     category: "Full-Stack System",
     categoryTag: "RELATIONAL DB",
-    title: "Enterprise Task & Resource Management Suite",
+    title: (
+      <p>
+        M<sup>2</sup>COFFEE
+      </p>
+    ),
     description:
-      "Modern collaborative project workspace with real-time state management, role-based access control (RBAC), normalized SQL schemas, and optimized pagination endpoints.",
+      "Responsive e-commerce frontend with product browsing, category filtering, cart interactions, and a modern user-friendly shopping experience.",
     metrics: [
       { label: "API Latency", value: "< 42ms", accent: true },
       { label: "DB Schema", value: "3NF Normalized" },
       { label: "Endpoints", value: "28 Routes" },
     ],
-    tags: ["React", "Node.js", "Express", "MySQL", "Tailwind"],
+    tags: ["React", "css3"],
     actions: [
       {
         label: "GitHub Repository",
         icon: <TbBrandGithub size={13} />,
         primary: true,
-        href: "#",
+        href: "https://gebiyawshop.netlify.app/",
       },
     ],
   },

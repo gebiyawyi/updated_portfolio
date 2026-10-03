@@ -23,7 +23,7 @@ export default function About() {
         {/* Section label + heading */}
         <div className="mb-14">
           <p className="section-label">
-            // 01 // ACADEMIC &amp; PROFESSIONAL NARRATIVE
+            // 01. ACADEMIC &amp; PROFESSIONAL NARRATIVE
           </p>
           <h2 className="section-title">About Me</h2>
           <p className="text-text-secondary max-w-2xl text-sm">
@@ -67,18 +67,17 @@ export default function About() {
               <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-border-subtle">
                 <span className="stat-pill">
                   <TbMapPin size={12} />
-                  Injibara, Amhara, Ethiopia
+                  Injibara,Ethiopia
                 </span>
                 <span className="stat-pill">
                   <TbCalendarEvent size={12} />
-                  Graduation Anticipated: 2025
+                  Graduation Anticipated: 2027
                 </span>
                 <span className="stat-pill">
                   <TbFolderCode size={12} />
                   20+ Documented Repositories
                 </span>
               </div>
-
               {/* Download CV button */}
               <a
                 href="/Gebiyaw-Yigermal-CV.pdf"
@@ -90,60 +89,39 @@ export default function About() {
               </a>
             </div>
           </div>
-
-          {/* RIGHT — Highlight cards */}
           <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <HighlightCard
               icon={<TbFolderCode size={20} />}
-              badge={{
-                label: "Verified",
-                variant: "green",
-                icon: <TbCircleCheck size={10} />,
-              }}
               stat="20+"
               title="Projects Built"
               desc="End-to-end repositories across AI, ML, Data Science & Full-Stack."
             />
             <HighlightCard
               icon={<TbBrain size={20} />}
-              badge={{ label: "Core", variant: "purple" }}
+
               title="AI & ML"
               titleAccent="Primary Specialization"
               desc="Scikit-learn, PyTorch, OCR, custom training & quantitative model testing."
             />
             <HighlightCard
               icon={<TbChartDots3 size={20} />}
-              badge={{
-                label: "EDA & ETL",
-                variant: "blue",
-                icon: <TbShieldCheck size={10} />,
-              }}
               title="Data Science"
               titleAccent="Analytics Pipelines"
               desc="Pandas, NumPy, Matplotlib, Seaborn, exploratory feature extraction."
             />
             <HighlightCard
               icon={<TbStack2 size={20} />}
-              badge={{
-                label: "Modern Web",
-                variant: "default",
-                icon: <TbRosette size={10} />,
-              }}
               title="Full-Stack"
               titleAccent="Resilient Systems"
               desc="React frontends, Node/Django backends, SQL databases & API orchestration."
             />
           </div>
         </div>
-
-        {/* BOTTOM — Tech Stack strip */}
         <TechStack />
       </div>
     </section>
   );
 }
-
-/* ——— Reusable Highlight Card ——— */
 function HighlightCard({ icon, badge, stat, title, titleAccent, desc }) {
   const badgeVariants = {
     green: "bg-status-green/10 text-status-green border border-status-green/30",

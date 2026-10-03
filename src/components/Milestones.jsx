@@ -16,7 +16,7 @@ export default function Milestones() {
         {/* Header */}
         <div className="mb-14">
           <p className="section-label">
-            // 06 // ACADEMIC &amp; APPLIED MILESTONES
+            // 06. ACADEMIC &amp; APPLIED MILESTONES
           </p>
           <h2 className="section-title">Track Record</h2>
           <p className="text-text-secondary max-w-2xl text-sm">
@@ -33,13 +33,13 @@ export default function Milestones() {
               <span className="milestone-dot" />
               <div className="flex items-center gap-2">
                 <TbSchool size={14} className="text-accent" />
-                <span className="milestone-year">2021 — 2025 (Expected)</span>
+                <span className="milestone-year">2022 — 2027 (Expected)</span>
               </div>
               <h3 className="milestone-title">
                 BSc in Computer Science (4th Year / Senior)
               </h3>
               <p className="milestone-meta">
-                Injibara University · Injibara, Amhara, Ethiopia
+                Injibara University ·Ethiopia
               </p>
               <p className="milestone-desc">
                 Core coursework: Data Structures &amp; Algorithms, Database
@@ -66,10 +66,10 @@ export default function Milestones() {
               <span className="milestone-dot" />
               <div className="flex items-center gap-2">
                 <TbBriefcase size={14} className="text-accent" />
-                <span className="milestone-year">2023 — Present</span>
+                <span className="milestone-year">2026 — Present</span>
               </div>
               <h3 className="milestone-title">
-                Applied AI &amp; Web Systems Developer
+                Data Science &amp; Web Systems Developer
               </h3>
               <p className="milestone-meta">
                 Academic Initiatives · Independent Project Delivery
@@ -81,7 +81,7 @@ export default function Milestones() {
                 computing peers in Python and SQL fundamentals.
               </p>
               <div className="flex flex-wrap gap-1.5 mt-3">
-                {["React", "Node.js", "Django", "PyTorch", "MySQL"].map((t) => (
+                {["React", "Node.js", "Django", "Python", "MySQL"].map((t) => (
                   <span key={t} className="tag">
                     {t}
                   </span>
@@ -113,7 +113,7 @@ export default function Milestones() {
             <PlaceholderTile
               icon={<TbClock size={16} />}
               label="Next Milestone"
-              title="Graduation · 2025"
+              title="Graduation · 2027"
               sub="Seeking full-time AI/ML or full-stack engineering roles"
             />
           </div>

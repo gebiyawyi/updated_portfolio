@@ -26,7 +26,7 @@ export default function Competencies() {
         {/* Section label + heading + legend */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-14">
           <div>
-            <p className="section-label">// 02 // TECHNICAL COMPETENCIES</p>
+            <p className="section-label">// 02 . TECHNICAL COMPETENCIES</p>
             <h2 className="section-title max-w-2xl">
               Rigorous foundations verified by practical implementation.
             </h2>
@@ -35,8 +35,6 @@ export default function Competencies() {
               arbitrary percentage sliders.
             </p>
           </div>
-
-          {/* Legend */}
           <div className="flex flex-col gap-2 text-xs font-mono text-text-muted">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-accent" />
@@ -48,14 +46,11 @@ export default function Competencies() {
             </span>
           </div>
         </div>
-
-        {/* 6-card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {/* Row 1 */}
           <SkillCard
             icon={<TbBrain size={20} />}
             title="AI & Machine Learning"
-            badge={{ label: "Primary", variant: "blue" }}
             desc="Mathematical model formulation, training routines, and quantitative validation curves."
             tags={[
               "Machine Learning",
@@ -74,7 +69,6 @@ export default function Competencies() {
           <SkillCard
             icon={<TbChartDots3 size={20} />}
             title="Data Science"
-            badge={{ label: "Primary", variant: "blue" }}
             desc="Data transformation, outlier filtration, and exploratory visual analytics."
             tags={[
               "Python",
@@ -94,7 +88,6 @@ export default function Competencies() {
           <SkillCard
             icon={<TbLayout2 size={20} />}
             title="Frontend Development"
-            badge={{ label: "UI / UX", variant: "purple" }}
             desc="Responsive, accessible client interfaces and real-time state manipulation."
             tags={[
               "React",
@@ -107,12 +100,9 @@ export default function Competencies() {
               "State Management",
             ]}
           />
-
-          {/* Row 2 */}
           <SkillCard
             icon={<TbServer2 size={20} />}
             title="Backend & APIs"
-            badge={{ label: "Services", variant: "green" }}
             desc="Server controllers, structured REST communication, and synchronous workers."
             tags={[
               "Django",
@@ -124,11 +114,9 @@ export default function Competencies() {
               "Middleware Design",
             ]}
           />
-
           <SkillCard
             icon={<TbDatabase size={20} />}
             title="Databases"
-            badge={{ label: "Storage", variant: "default" }}
             desc="Relational schema design, SQL index planning, query execution, and migration."
             tags={[
               "MySQL",
@@ -144,7 +132,6 @@ export default function Competencies() {
           <SkillCard
             icon={<TbCode size={20} />}
             title="Languages & Tooling"
-            badge={{ label: "Core", variant: "default" }}
             desc="Foundational programming dialects and everyday workflow toolchain."
             tags={[
               "Python",

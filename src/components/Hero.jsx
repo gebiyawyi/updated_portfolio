@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProfileCard from "./ui/ProfileCard";
+
 const ROLES = [
   "Machine Learning & Data Science Engineer",
   "Full-Stack Developer (React, Node.js, MySQL)",
@@ -46,12 +47,12 @@ export default function Hero() {
           {/* Availability pill */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-status-green/30 bg-status-green/5 mb-8">
             <span className="status-dot" />
-            <span className="text-[11px] font-mono uppercase tracking-widest text-status-green">
+            <span className="text-base font-mono font-medium uppercase tracking-widest text-text-primary">
               Available for ML &amp; Data Science Roles
             </span>
           </div>
 
-          {/* Name block — "Hi, I'm" is now the same size/color as Gebiyaw */}
+          {/* Name block */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-4">
             <span className="block text-text-secondary">
               Hi, <span className="text-text-primary">I'm</span>
@@ -59,6 +60,8 @@ export default function Hero() {
             <span className="block text-text-primary">Gebiyaw</span>
             <span className="block gradient-text">Yigermal</span>
           </h1>
+
+          {/* Dynamic typed role */}
           <div className="flex items-baseline gap-3 mt-6 mb-6 min-h-[40px]">
             <span className="text-accent text-xl font-mono leading-none">
               |
@@ -166,17 +169,14 @@ export default function Hero() {
                 ))}
               </div>
             </div>
-
-            <span className="flex items-center gap-2 text-xs font-mono text-text-muted ml-auto">
-              <span className="status-dot" />
-              AVAILABLE FOR 2026 AI/ML ROLES
-            </span>
           </div>
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="lg:col-span-5 lg:pl-8">
-          <ProfileCard />
+        <div className="lg:col-span-5 lg:pl-8 flex justify-center lg:justify-end">
+          <div className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-full">
+            <ProfileCard />
+          </div>
         </div>
       </div>
     </section>

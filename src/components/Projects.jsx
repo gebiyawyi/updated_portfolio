@@ -1,16 +1,11 @@
 import { useState } from "react";
+import tourism from "../assets/images/tuerism.png";
 import {
-  TbPlant2,
-  TbEyeCheck,
-  TbMap2,
-  TbBuildingSkyscraper,
   TbArrowUpRight,
   TbChevronRight,
   TbPlayerPlay,
   TbBrandGithub,
   TbFileDescription,
-  TbCircleCheckFilled,
-  TbCircleDot,
   TbPhoto,
 } from "react-icons/tb";
 
@@ -40,21 +35,18 @@ const projects = [
       "Node.js",
       "SQLite",
     ],
-    status: {
-      label: "Live Case Study",
-      variant: "green",
-      icon: <TbCircleCheckFilled size={10} />,
-    },
     actions: [
       {
         label: "View Case Study",
         icon: <TbFileDescription size={13} />,
         primary: true,
+        href: "#",
       },
       {
         label: "Live Ready",
         icon: <TbArrowUpRight size={13} />,
         primary: false,
+        href: "#",
       },
     ],
   },
@@ -73,16 +65,12 @@ const projects = [
       { label: "Classes", value: "6" },
     ],
     tags: ["PyTorch", "Scikit-learn", "Python", "OpenCV", "React Backbone"],
-    status: {
-      label: "Inference Engine",
-      variant: "blue",
-      icon: <TbCircleDot size={10} />,
-    },
     actions: [
       {
         label: "Inspect Weights & Code",
         icon: <TbBrandGithub size={13} />,
         primary: true,
+        href: "#",
       },
       {
         label: "Accuracy 74.2%",
@@ -94,11 +82,11 @@ const projects = [
   },
   {
     id: 3,
-    image: "/projects/ethiopia-tourism.jpg",
+    image: tourism,
     categories: ["FULL-STACK", "REST", "BACKEND & SQL"],
     category: "Full-Stack + GIS",
     categoryTag: "TOURISM PLATFORM",
-    title: "Ethiopian Tourism Discovery & Booking Platform",
+    title: "Ethiopian Tourism & Travel Management",
     description:
       "A geospatial and content-rich tourism platform showcasing Ethiopian heritage sites — Lalibela, Simien Mountains, Axum, and the Danakil Depression — with interactive maps, itinerary planning, multilingual support, and secure booking workflows.",
     metrics: [
@@ -106,22 +94,20 @@ const projects = [
       { label: "Regions Covered", value: "11" },
       { label: "API Latency", value: "< 65ms" },
     ],
-    tags: ["React", "Node.js", "Express", "MySQL", "Leaflet Maps", "Tailwind"],
-    status: {
-      label: "Live Demo",
-      variant: "green",
-      icon: <TbCircleCheckFilled size={10} />,
-    },
+    tags: ["React", "Node.js", "Express", "MySQL", "Leaflet Maps", "CSS3"],
     actions: [
       {
         label: "Explore Platform",
         icon: <TbArrowUpRight size={13} />,
         primary: true,
+        href: "https://ethiopia-tourism-system.vercel.app/",
+        external: true,
       },
       {
         label: "GitHub Repository",
         icon: <TbBrandGithub size={13} />,
         primary: false,
+        href: "#",
       },
     ],
   },
@@ -140,20 +126,17 @@ const projects = [
       { label: "Endpoints", value: "28 Routes" },
     ],
     tags: ["React", "Node.js", "Express", "MySQL", "Tailwind"],
-    status: {
-      label: "Full CRUD + Auth",
-      variant: "green",
-      icon: <TbCircleCheckFilled size={10} />,
-    },
     actions: [
       {
         label: "GitHub Repository",
         icon: <TbBrandGithub size={13} />,
         primary: true,
+        href: "#",
       },
     ],
   },
 ];
+
 const filters = [
   "ALL PROJECTS",
   "AI/ML",
@@ -163,7 +146,6 @@ const filters = [
   "BACKEND & SQL",
 ];
 
-/* ——— Main Section ——— */
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("ALL PROJECTS");
 
@@ -171,6 +153,7 @@ export default function Projects() {
     activeFilter === "ALL PROJECTS"
       ? projects
       : projects.filter((p) => p.categories?.includes(activeFilter));
+
   return (
     <section
       id="projects"
@@ -179,8 +162,8 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Header */}
         <div className="mb-10">
-          <p className="section-label">// 04 // COMPUTATIONAL PORTFOLIO</p>
-          <h2 className="section-title">Computational Portfolio</h2>
+          <p className="section-label">// 04. SELECTED WORKS</p>
+          <h2 className="section-title">Featured Projects & Repositories</h2>
           <p className="text-text-secondary max-w-2xl text-sm">
             Live implementations highlighting data manipulation, algorithmic
             inference, and structured full-stack delivery.
@@ -231,13 +214,6 @@ export default function Projects() {
 function ProjectCard({ project }) {
   const [imgError, setImgError] = useState(false);
 
-  const statusVariants = {
-    green: "text-status-green",
-    blue: "text-accent",
-    purple: "text-status-purple",
-    default: "text-text-secondary",
-  };
-
   return (
     <article className="project-card">
       {/* ——— Image header ——— */}
@@ -256,21 +232,11 @@ function ProjectCard({ project }) {
             loading="lazy"
           />
         )}
-
-        {/* Floating status pill on image */}
-        {project.status && (
-          <span
-            className={`project-image-status ${statusVariants[project.status.variant || "default"]}`}
-          >
-            {project.status.icon}
-            <span className="text-white/90">{project.status.label}</span>
-          </span>
-        )}
       </div>
 
       {/* ——— Body ——— */}
       <div className="project-body">
-        {/* Top row: category tag */}
+        {/* Top row: category + categoryTag */}
         <div className="flex items-center justify-between gap-3">
           <span className="text-[10px] font-mono uppercase tracking-widest text-accent">
             {project.category}
@@ -313,22 +279,33 @@ function ProjectCard({ project }) {
 
         {/* Action buttons */}
         <div className="flex flex-wrap gap-2 pt-2 mt-auto">
-          {project.actions.map((a) => (
-            <button
-              key={a.label}
-              disabled={a.disabled}
-              className={
-                a.disabled
-                  ? "text-[11px] font-mono text-text-muted flex items-center gap-1.5 px-2.5 py-1.5 cursor-not-allowed"
-                  : a.primary
+          {project.actions.map((a) =>
+            a.disabled ? (
+              <button
+                key={a.label}
+                disabled
+                className="text-[11px] font-mono text-text-muted flex items-center gap-1.5 px-2.5 py-1.5 cursor-not-allowed"
+              >
+                {a.icon}
+                {a.label}
+              </button>
+            ) : (
+              <a
+                key={a.label}
+                href={a.href || "#"}
+                target={a.external ? "_blank" : undefined}
+                rel={a.external ? "noopener noreferrer" : undefined}
+                className={
+                  a.primary
                     ? "btn-primary text-[11px] py-1.5 px-3"
                     : "btn-outline text-[11px] py-1.5 px-3"
-              }
-            >
-              {a.icon}
-              {a.label}
-            </button>
-          ))}
+                }
+              >
+                {a.icon}
+                {a.label}
+              </a>
+            ),
+          )}
         </div>
       </div>
     </article>

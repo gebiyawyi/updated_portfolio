@@ -6,7 +6,7 @@
 /* ——— Design tokens (Tailwind v4 @theme) ——— */
 @theme {
   /* Backgrounds — softer navy, not near-black */
-  --color-bg-primary: #0b1120;
+  --color-bg-primary: #0a0d1a;
   --color-bg-secondary: #111a2c;
   --color-bg-tertiary: #1a2332;
 
@@ -45,16 +45,18 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
     background-color: var(--color-bg-primary);
     color: var(--color-text-secondary);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.10) 0%, transparent 50%),
-      radial-gradient(circle at 80% 50%, rgba(6, 182, 212, 0.07) 0%, transparent 50%);
+      radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
     background-attachment: fixed;
   }
+
   h1, h2, h3, h4 {
     color: var(--color-text-primary);
     font-weight: 600;
@@ -242,8 +244,6 @@ a:hover .logo-avatar {
 }
 
 /* ——— Hero dynamic text ——— */
-
-/* Gradient text (used for "Yigermal") */
 .gradient-text {
   background: linear-gradient(90deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
   -webkit-background-clip: text;
@@ -253,14 +253,12 @@ a:hover .logo-avatar {
   display: inline-block;
 }
 
-/* Role text color — solid teal */
 .gradient-role {
   color: #008787;
   -webkit-text-fill-color: #008787;
   display: inline-block;
 }
 
-/* Blinking cursor after typed text */
 .type-cursor {
   display: inline-block;
   margin-left: 2px;
@@ -344,6 +342,20 @@ a:hover .logo-avatar {
 /* ——— Profile card ——— */
 .profile-card {
   padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.15),
+    0 0 30px rgba(59, 130, 246, 0.10),
+    0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.4s ease;
+}
+
+.profile-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.35),
+    0 0 40px rgba(59, 130, 246, 0.20),
+    0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .profile-photo-frame {
@@ -516,18 +528,6 @@ a:hover .logo-avatar {
 .project-card:hover .project-image {
   transform: scale(1.03);
 }
-.project-image-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(11, 26, 44, 0) 0%,
-    rgba(11, 26, 44, 0.15) 55%,
-    rgba(11, 26, 44, 0.75) 100%
-  );
-  pointer-events: none;
-}
 .project-image-fallback {
   width: 100%;
   height: 100%;
@@ -544,22 +544,6 @@ a:hover .logo-avatar {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-}
-.project-image-status {
-  position: absolute;
-  left: 1rem;
-  bottom: 0.85rem;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 9999px;
-  backdrop-filter: blur(8px);
-  background: rgba(11, 26, 44, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .project-body {
   padding: 1.25rem 1.5rem 1.5rem;
@@ -891,4 +875,16 @@ a:hover .logo-avatar {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* ——— Brand-colored icon boxes for Contact channels ——— */
+.icon-box-whatsapp {
+  background-color: rgba(37, 211, 102, 0.12);
+  border-color: rgba(37, 211, 102, 0.35);
+  color: #25D366;
+}
+
+.icon-box-telegram {
+  background-color: rgba(38, 165, 228, 0.12);
+  border-color: rgba(38, 165, 228, 0.35);
+  color: #26A5E4;
 }

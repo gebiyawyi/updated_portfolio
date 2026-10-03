@@ -7,6 +7,8 @@ import {
   TbBrain,
   TbTargetArrow,
   TbRocket,
+  TbGitBranch,
+  TbRefresh,
 } from "react-icons/tb";
 
 const steps = [
@@ -69,7 +71,7 @@ export default function Pipeline() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Header */}
         <div className="mb-12">
-          <p className="section-label">// 03 // EXECUTION PIPELINE</p>
+          <p className="section-label">// 03. EXECUTION PIPELINE</p>
           <h2 className="section-title">
             Data Science &amp; Machine Learning Pipeline
           </h2>
@@ -121,17 +123,17 @@ export default function Pipeline() {
         </div>
 
         {/* Bottom meta line */}
-        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[10px] font-mono text-text-muted uppercase tracking-widest">
+        <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-mono text-text-primary uppercase tracking-widest">
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-accent" />
+            <TbGitBranch size={14} className="text-accent" />
             Iterative &amp; Versioned
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-status-green" />
+            <TbRefresh size={14} className="text-status-green" />
             Reproducible
           </span>
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-status-purple" />
+            <TbRocket size={14} className="text-status-purple" />
             Production-Ready
           </span>
         </div>

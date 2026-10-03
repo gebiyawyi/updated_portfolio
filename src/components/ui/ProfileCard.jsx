@@ -7,7 +7,6 @@ export default function ProfileCard() {
 
   return (
     <div className="relative">
-      {/* Main card — photo only, info overlaid */}
       <div className="card profile-card bg-bg-secondary/60 backdrop-blur-sm overflow-hidden">
         <div className="profile-photo-frame">
           {imgError ? (
@@ -32,8 +31,6 @@ export default function ProfileCard() {
               onError={() => setImgError(true)}
             />
           )}
-
-          {/* Info overlay — bottom of photo */}
           <div className="profile-info">
             <span className="profile-info-icon">
               <TbMapPin size={16} />
@@ -49,8 +46,7 @@ export default function ProfileCard() {
       </div>
 
       {/* Side scroll hint (unchanged) */}
-      <div className="hidden lg:flex absolute -right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-3">
-      </div>
+      <div className="hidden lg:flex absolute -right-8 top-1/2 -translate-y-1/2 flex-col items-center gap-3"></div>
     </div>
   );
 }

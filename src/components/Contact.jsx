@@ -10,7 +10,17 @@ import {
   TbAlertCircle,
   TbLoader2,
 } from "react-icons/tb";
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
+
+/* 🔴 Your Formspree endpoint */
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaenrpea";
+
+/* 🔴 Replace with your real URLs */
+const GITHUB_URL = "https://github.com/your-username";
+const LINKEDIN_URL = "https://linkedin.com/in/your-username";
+const WHATSAPP_URL = "https://wa.me/251918939724";
+const TELEGRAM_URL = "https://t.me/gebyig";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -34,7 +44,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic client-side validation
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -84,7 +93,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-12 gap-10">
           {/* LEFT: Invitation + contact info */}
           <div className="lg:col-span-5">
-            <p className="section-label">// 07 // INVITATION</p>
+            <p className="section-label">// 07. INVITATION</p>
             <h2 className="section-title leading-tight">
               Let's Build Something
               <br />
@@ -99,6 +108,7 @@ export default function Contact() {
 
             {/* Contact channels */}
             <div className="space-y-3">
+              {/* Email */}
               <a
                 href="mailto:gebiyaw.cs@gmail.com"
                 className="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-bg-secondary hover:border-accent transition-colors group"
@@ -116,6 +126,7 @@ export default function Contact() {
                 </div>
               </a>
 
+              {/* Location */}
               <div className="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-bg-secondary">
                 <span className="icon-box">
                   <TbMapPin size={16} />
@@ -125,28 +136,78 @@ export default function Contact() {
                     Primary Location &amp; Timezone
                   </span>
                   <span className="text-sm text-text-primary">
-                    Injibara, Ethiopia · Remote Available (UTC+3)
+                    Addis Ababa, Ethiopia · Remote Available (UTC+3)
                   </span>
                 </div>
               </div>
+
+              {/* WhatsApp */}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-bg-secondary hover:border-[#25D366] transition-colors group"
+              >
+                <span className="icon-box icon-box-whatsapp">
+                  <FaWhatsapp size={18} />
+                </span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest">
+                    WhatsApp · Quick Chat
+                  </span>
+                  <span className="text-sm text-text-primary group-hover:text-[#25D366] transition-colors">
+                    +251 918 939 724
+                  </span>
+                </div>
+              </a>
+
+              {/* Telegram */}
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-bg-secondary hover:border-[#26A5E4] transition-colors group"
+              >
+                <span className="icon-box icon-box-telegram">
+                  <FaTelegramPlane size={18} />
+                </span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-mono text-text-muted uppercase tracking-widest">
+                    Telegram · Message Me
+                  </span>
+                  <span className="text-sm text-text-primary group-hover:text-[#26A5E4] transition-colors">
+                    @gebyig
+                  </span>
+                </div>
+              </a>
             </div>
 
             {/* Social buttons */}
             <div className="flex gap-2 mt-6">
-              <a href="#" className="btn-outline text-xs flex-1 justify-center">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline text-xs flex-1 justify-center"
+              >
                 <TbBrandGithub size={14} />
-                GitHub Profile
+                GitHub
               </a>
-              <a href="#" className="btn-outline text-xs flex-1 justify-center">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline text-xs flex-1 justify-center"
+              >
                 <TbBrandLinkedin size={14} />
-                LinkedIn Profile
+                LinkedIn
               </a>
             </div>
 
             {/* Response time hint */}
             <div className="flex items-center gap-2 mt-6 text-[10px] font-mono text-text-muted uppercase tracking-widest">
               <TbClockHour4 size={12} className="text-status-green" />
-              Typical Response Time · Under 24 Hours
+              Based in Addis Ababa · Replies within a few hours
             </div>
           </div>
 
@@ -157,7 +218,7 @@ export default function Contact() {
               onSubmit={handleSubmit}
               noValidate
             >
-              {/* Honeypot — hidden, only bots fill this */}
+              {/* Honeypot */}
               <input
                 type="text"
                 name="_gotcha"
@@ -166,7 +227,7 @@ export default function Contact() {
                 style={{ display: "none" }}
               />
 
-              {/* Reply-to + subject for better email handling */}
+              {/* Reply-to + subject */}
               <input type="hidden" name="_replyto" value={formData.email} />
               <input
                 type="hidden"

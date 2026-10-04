@@ -11,16 +11,11 @@ import {
   TbLoader2,
 } from "react-icons/tb";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
-
-/* 🔴 Your Formspree endpoint */
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaenrpea";
-
-/* 🔴 Replace with your real URLs */
 const GITHUB_URL = "https://github.com/your-username";
 const LINKEDIN_URL = "https://linkedin.com/in/your-username";
 const WHATSAPP_URL = "https://wa.me/251918939724";
 const TELEGRAM_URL = "https://t.me/gebyig";
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,22 +23,14 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-
   const [status, setStatus] = useState("idle");
-  // "idle" | "sending" | "success" | "error"
-
   const [errorMsg, setErrorMsg] = useState("");
-
-  /* Handle input change */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
-  /* Handle submit */
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -53,10 +40,8 @@ export default function Contact() {
       setErrorMsg("Please fill in name, email, and message.");
       return;
     }
-
     setStatus("sending");
     setErrorMsg("");
-
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
@@ -66,7 +51,6 @@ export default function Contact() {
         },
         body: JSON.stringify(formData),
       });
-
       if (res.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
@@ -91,11 +75,9 @@ export default function Contact() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid lg:grid-cols-12 gap-10">
-          {/* LEFT: Invitation + contact info */}
           <div className="lg:col-span-5">
-            <p className="section-label">// 07. INVITATION</p>
             <h2 className="section-title leading-tight">
-              Let's Build Something
+              Have an idea worth building?
               <br />
               <span className="text-accent">Intelligent</span>
             </h2>
@@ -105,10 +87,7 @@ export default function Contact() {
               Whether you are building an ML pipeline or need a full-stack
               architect, let's talk.
             </p>
-
-            {/* Contact channels */}
             <div className="space-y-3">
-              {/* Email */}
               <a
                 href="mailto:gebiyaw.cs@gmail.com"
                 className="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-bg-secondary hover:border-accent transition-colors group"
@@ -121,12 +100,10 @@ export default function Contact() {
                     Direct Email
                   </span>
                   <span className="text-sm text-text-primary group-hover:text-accent transition-colors">
-                    gebiyaw.cs@gmail.com
+                    gebiyaw2004@gmail.com
                   </span>
                 </div>
               </a>
-
-              {/* Location */}
               <div className="flex items-center gap-3 p-3 rounded-lg border border-border-subtle bg-bg-secondary">
                 <span className="icon-box">
                   <TbMapPin size={16} />
@@ -136,12 +113,10 @@ export default function Contact() {
                     Primary Location &amp; Timezone
                   </span>
                   <span className="text-sm text-text-primary">
-                    Addis Ababa, Ethiopia · Remote Available (UTC+3)
+                    Injibara, Ethiopia · Remote Available (UTC+3)
                   </span>
                 </div>
               </div>
-
-              {/* WhatsApp */}
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
@@ -160,8 +135,6 @@ export default function Contact() {
                   </span>
                 </div>
               </a>
-
-              {/* Telegram */}
               <a
                 href={TELEGRAM_URL}
                 target="_blank"
@@ -181,8 +154,6 @@ export default function Contact() {
                 </div>
               </a>
             </div>
-
-            {/* Social buttons */}
             <div className="flex gap-2 mt-6">
               <a
                 href={GITHUB_URL}
@@ -203,22 +174,17 @@ export default function Contact() {
                 LinkedIn
               </a>
             </div>
-
-            {/* Response time hint */}
             <div className="flex items-center gap-2 mt-6 text-[10px] font-mono text-text-muted uppercase tracking-widest">
               <TbClockHour4 size={12} className="text-status-green" />
-              Based in Addis Ababa · Replies within a few hours
+              Reach me by email or WhatsApp · Addis Ababa (UTC+3)
             </div>
           </div>
-
-          {/* RIGHT: Contact form */}
           <div className="lg:col-span-7">
             <form
               className="card p-6 space-y-5"
               onSubmit={handleSubmit}
               noValidate
             >
-              {/* Honeypot */}
               <input
                 type="text"
                 name="_gotcha"
@@ -226,16 +192,12 @@ export default function Contact() {
                 autoComplete="off"
                 style={{ display: "none" }}
               />
-
-              {/* Reply-to + subject */}
               <input type="hidden" name="_replyto" value={formData.email} />
               <input
                 type="hidden"
                 name="_subject"
                 value={`Portfolio contact from ${formData.name || "someone"}`}
               />
-
-              {/* Row 1: Name + Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="contact-label">
@@ -246,7 +208,7 @@ export default function Contact() {
                     name="name"
                     type="text"
                     className="contact-input"
-                    placeholder="e.g. Dr. Alex Mercer"
+                    placeholder="e.g.Nati"
                     value={formData.name}
                     onChange={handleChange}
                     disabled={status === "sending"}
@@ -262,7 +224,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     className="contact-input"
-                    placeholder="alex@organization.com"
+                    placeholder="nati@gmail.com"
                     value={formData.email}
                     onChange={handleChange}
                     disabled={status === "sending"}
@@ -270,8 +232,6 @@ export default function Contact() {
                   />
                 </div>
               </div>
-
-              {/* Row 2: Subject */}
               <div>
                 <label htmlFor="subject" className="contact-label">
                   Discussion Topic / Field
@@ -281,14 +241,12 @@ export default function Contact() {
                   name="subject"
                   type="text"
                   className="contact-input"
-                  placeholder="Machine Learning / AI Systems"
+                  placeholder="Machine Learning /Data science"
                   value={formData.subject}
                   onChange={handleChange}
                   disabled={status === "sending"}
                 />
               </div>
-
-              {/* Row 3: Message */}
               <div>
                 <label htmlFor="message" className="contact-label">
                   Message / Technical Scope
@@ -305,8 +263,6 @@ export default function Contact() {
                   required
                 />
               </div>
-
-              {/* Error message */}
               {status === "error" && (
                 <div className="flex items-start gap-2 p-3 rounded-lg border border-red-500/30 bg-red-500/5">
                   <TbAlertCircle
@@ -318,8 +274,6 @@ export default function Contact() {
                   </p>
                 </div>
               )}
-
-              {/* Success message */}
               {status === "success" && (
                 <div className="flex items-start gap-2 p-3 rounded-lg border border-status-green/30 bg-status-green/5">
                   <TbCircleCheck
@@ -331,8 +285,6 @@ export default function Contact() {
                   </p>
                 </div>
               )}
-
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={status === "sending"}
@@ -350,8 +302,6 @@ export default function Contact() {
                   </>
                 )}
               </button>
-
-              {/* Small hint */}
               <p className="text-[10px] font-mono text-text-muted text-center uppercase tracking-widest pt-1">
                 Encrypted Transmission · No Spam · Direct Inbox
               </p>

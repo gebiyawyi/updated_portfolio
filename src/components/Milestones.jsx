@@ -2,8 +2,8 @@ import {
   TbSchool,
   TbBriefcase,
   TbCertificate,
-  TbUsers,
   TbClock,
+  TbBrandLinkedin,
 } from "react-icons/tb";
 
 export default function Milestones() {
@@ -13,19 +13,14 @@ export default function Milestones() {
       className="relative py-24 border-t border-border-subtle"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        {/* Header */}
         <div className="mb-14">
-          <p className="section-label">
-            // 06. ACADEMIC &amp; APPLIED MILESTONES
-          </p>
-          <h2 className="section-title">Track Record</h2>
+          <h2 className="section-title">Background &amp; Certifications</h2>
           <p className="text-text-secondary max-w-2xl text-sm">
-            Academic foundation anchored by practical software and data
-            architecture deployments.
+            A CS degree in progress, plus certifications and projects I've
+            shipped along the way.
           </p>
         </div>
 
-        {/* Timeline */}
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7">
             {/* Milestone 1 */}
@@ -38,9 +33,7 @@ export default function Milestones() {
               <h3 className="milestone-title">
                 BSc in Computer Science (4th Year / Senior)
               </h3>
-              <p className="milestone-meta">
-                Injibara University ·Ethiopia
-              </p>
+              <p className="milestone-meta">Injibara University · Ethiopia</p>
               <p className="milestone-desc">
                 Core coursework: Data Structures &amp; Algorithms, Database
                 Systems, Operating Systems, Artificial Intelligence
@@ -75,9 +68,8 @@ export default function Milestones() {
                 Academic Initiatives · Independent Project Delivery
               </p>
               <p className="milestone-desc">
-                Designed 20+ applications spanning local market pricing models,
-                computer vision diagnostic pipelines, and responsive
-                React/Django relational architectures. Mentored early-year
+                Built projects spanning market price modeling, data analytics,
+                and responsive React/Django web apps. Mentored early-year
                 computing peers in Python and SQL fundamentals.
               </p>
               <div className="flex flex-wrap gap-1.5 mt-3">
@@ -90,7 +82,6 @@ export default function Milestones() {
             </div>
           </div>
 
-          {/* Right: placeholder tiles */}
           <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
             <PlaceholderTile
               icon={<TbBriefcase size={16} />}
@@ -100,15 +91,15 @@ export default function Milestones() {
             />
             <PlaceholderTile
               icon={<TbCertificate size={16} />}
-              label="Continuous"
-              title="Certifications"
-              sub="Deep Learning Specialization in progress"
+              label="Certified"
+              title="AI & Data Science Professional"
+              sub="Certificates verifiable on LinkedIn"
             />
             <PlaceholderTile
-              icon={<TbUsers size={16} />}
-              label="Open Channel"
-              title="Freelance & Collabs"
-              sub="Available for data consulting and data science contracts"
+              icon={<TbBrandLinkedin size={16} />}
+              label="Reach Out"
+              title="LinkedIn & GitHub"
+              sub="Connect for ML discussions, collaboration, or opportunities"
             />
             <PlaceholderTile
               icon={<TbClock size={16} />}

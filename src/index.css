@@ -6,7 +6,7 @@
 /* ——— Design tokens (Tailwind v4 @theme) ——— */
 @theme {
   /* Backgrounds — softer navy, not near-black */
-  --color-bg-primary: #0a0d1a;
+  --color-bg-primary: #0f1729;
   --color-bg-secondary: #111a2c;
   --color-bg-tertiary: #1a2332;
 
@@ -876,6 +876,7 @@ a:hover .logo-avatar {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 /* ——— Brand-colored icon boxes for Contact channels ——— */
 .icon-box-whatsapp {
   background-color: rgba(37, 211, 102, 0.12);

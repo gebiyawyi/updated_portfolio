@@ -58,7 +58,7 @@ const steps = [
     n: "08",
     title: "Deployment",
     icon: <TbRocket size={16} />,
-    tags: ["REST API", "Docker"],
+    tags:["Vercel", "Netlify", "Render", "Firebase"]
   },
 ];
 
@@ -71,7 +71,6 @@ export default function Pipeline() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Header */}
         <div className="mb-12">
-          <p className="section-label">// 03. EXECUTION PIPELINE</p>
           <h2 className="section-title">
             Data Science &amp; Machine Learning Pipeline
           </h2>

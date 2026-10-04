@@ -10,8 +10,6 @@ import {
   TbFileDescription,
   TbPhoto,
 } from "react-icons/tb";
-
-/* ——— Data ——— */
 const projects = [
   {
     id: 1,
@@ -53,36 +51,36 @@ const projects = [
     ],
   },
   {
-    id: 2,
-    image: "/projects/defect-vision.jpg",
-    categories: ["AI/ML", "REST"],
-    category: "Computer Vision",
-    categoryTag: "PYTORCH INFERENCE",
-    title: "Deep Neural Vision Defect Detector",
-    description:
-      "Convolutional neural network pipeline for classifying industrial surface defects with high-recall validation curves, automated bounding box localization, and batch preprocessing routines.",
-    metrics: [
-      { label: "mAP Score", value: "0.942", accent: true },
-      { label: "Inference", value: "18ms/frame" },
-      { label: "Classes", value: "6" },
-    ],
-    tags: ["PyTorch", "Scikit-learn", "Python", "OpenCV", "React Backbone"],
-    actions: [
-      {
-        label: "Inspect Weights & Code",
-        icon: <TbBrandGithub size={13} />,
-        primary: true,
-        href: "#",
-      },
-      {
-        label: "Accuracy 74.2%",
-        icon: <TbPlayerPlay size={13} />,
-        primary: false,
-        disabled: true,
-      },
-    ],
-  },
-  {
+  id: 2,
+  image: "/projects/churn-model.jpg",
+  categories: ["AI/ML", "DATA SCIENCE"],
+  category: "Predictive ML",
+  categoryTag: "SCIKIT-LEARN · EDA",
+  title: "Customer Churn Prediction",
+  description:
+    "End-to-end ML project predicting telecom customer churn. Handled missing values and class imbalance, engineered tenure and service-usage features, then compared Logistic Regression, Random Forest, and Gradient Boosting — best ROC-AUC of 0.91 on test data.",
+  metrics: [
+    { label: "ROC-AUC", value: "0.91", accent: true },
+    { label: "Models", value: "3 compared" },
+    { label: "Dataset", value: "7K customers" },
+  ],
+  tags: ["Python", "scikit-learn", "Pandas", "NumPy", "Seaborn"],
+  actions: [
+    {
+      label: "View Notebook",
+      icon: <TbFileDescription size={13} />,
+      primary: true,
+      href: "#",
+    },
+    {
+      label: "GitHub",
+      icon: <TbBrandGithub size={13} />,
+      primary: false,
+      href: "#",
+    },
+  ],
+},
+{
     id: 3,
     image: tourism,
     categories: ["FULL-STACK", "REST", "BACKEND & SQL"],
@@ -168,8 +166,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Header */}
         <div className="mb-10">
-          <p className="section-label">// 04. SELECTED WORKS</p>
-          <h2 className="section-title">Featured Projects & Repositories</h2>
+          <h2 className="section-title">Selected Projects & Code</h2>
           <p className="text-text-secondary max-w-2xl text-sm">
             Live implementations highlighting data manipulation, algorithmic
             inference, and structured full-stack delivery.

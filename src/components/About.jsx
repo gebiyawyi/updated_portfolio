@@ -20,50 +20,37 @@ export default function About() {
       className="relative py-24 border-t border-border-subtle"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        {/* Section label + heading */}
         <div className="mb-14">
-          <p className="section-label">
-            // 01. ACADEMIC &amp; PROFESSIONAL NARRATIVE
-          </p>
           <h2 className="section-title">About Me</h2>
           <p className="text-text-secondary max-w-2xl text-sm">
             Bridging Algorithmic Intelligence &amp; Resilient Full-Stack Systems
           </p>
         </div>
-
-        {/* Two-column grid */}
         <div className="grid lg:grid-cols-12 gap-8">
           {/* LEFT — Bio */}
           <div className="lg:col-span-7">
             <div className="card bio-text">
               <p>
-                I am a <strong>4th-year Computer Science student</strong> at
-                Injibara University in Ethiopia, driven by an uncompromising
-                curiosity for how raw, uncalibrated data can be captured,
-                transformed, and surfaced into highly computational software.
+                I'm a <strong>4th-year Computer Science student</strong> at
+                Injibara University, Ethiopia. Most of what I've learned comes
+                from <em>building things</em> — ML models, data pipelines,
+                full-stack apps — rather than from lectures alone.
               </p>
 
               <p>
-                My academic foundation is built upon deep coursework in{" "}
-                <em>
-                  discrete algorithms, database internals, and software
-                  engineering
-                </em>
-                . Rather than treating artificial intelligence as a black box, I
-                focus on the host engineering required to capture real-world
-                data, statistical validation, model optimization using PyTorch
-                and Scikit-learn, and deploying robust inference engines behind
-                Django and Node.js microservices.
+                I work primarily with{" "}
+                <strong>Python, scikit-learn, and Pandas</strong> on the ML
+                side, and <strong>React, Node.js, and MySQL</strong> on the web
+                side. I like taking a messy dataset, cleaning it, and getting it
+                to do something useful — whether that's predicting crop prices
+                or classifying customer churn.
               </p>
 
               <p>
-                I maintain a grounded, production-first perspective. Every
-                algorithm I write is designed to survive real-world edge cases —
-                from irregular agricultural market fluctuations to automated
-                defect scanning and distributed clinical data pipelines.
+                I care about code that <em>actually works in the real world</em>
+                . Every project I ship, I try to make it survive real data — not
+                just the tutorial's sample CSV.
               </p>
-
-              {/* Meta chips */}
               <div className="flex flex-wrap gap-3 mt-6 pt-6 border-t border-border-subtle">
                 <span className="stat-pill">
                   <TbMapPin size={12} />
@@ -98,7 +85,6 @@ export default function About() {
             />
             <HighlightCard
               icon={<TbBrain size={20} />}
-
               title="AI & ML"
               titleAccent="Primary Specialization"
               desc="Scikit-learn, PyTorch, OCR, custom training & quantitative model testing."

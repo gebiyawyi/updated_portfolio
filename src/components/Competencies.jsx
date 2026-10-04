@@ -5,15 +5,6 @@ import {
   TbServer2,
   TbDatabase,
   TbCode,
-  TbBrandPython,
-  TbBrandReact,
-  TbBrandJavascript,
-  TbBrandNodejs,
-  TbBrandMysql,
-  TbBrandTailwind,
-  TbBrandGit,
-  TbBrandVscode,
-  TbTerminal2,
 } from "react-icons/tb";
 
 export default function Competencies() {
@@ -23,12 +14,11 @@ export default function Competencies() {
       className="relative py-24 border-t border-border-subtle"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
-        {/* Section label + heading + legend */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-14">
           <div>
-            <p className="section-label">// 02 . TECHNICAL COMPETENCIES</p>
             <h2 className="section-title max-w-2xl">
-              Rigorous foundations verified by practical implementation.
+              The tools I actually work with — by category, not by fake skill
+              bars.
             </h2>
             <p className="text-text-secondary max-w-2xl text-sm">
               Categorized transparently by architectural domain without
@@ -46,21 +36,19 @@ export default function Competencies() {
             </span>
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {/* Row 1 */}
           <SkillCard
             icon={<TbBrain size={20} />}
             title="AI & Machine Learning"
             desc="Mathematical model formulation, training routines, and quantitative validation curves."
             tags={[
               "Machine Learning",
-              "Artificial Intelligence",
               "Scikit-learn",
               "PyTorch",
               "SciPy",
               "Model Training",
               "Model Evaluation",
-              "Deep Learning",
               "Data Visualization",
             ]}
             accent
@@ -100,6 +88,7 @@ export default function Competencies() {
               "State Management",
             ]}
           />
+
           <SkillCard
             icon={<TbServer2 size={20} />}
             title="Backend & APIs"
@@ -114,6 +103,7 @@ export default function Competencies() {
               "Middleware Design",
             ]}
           />
+
           <SkillCard
             icon={<TbDatabase size={20} />}
             title="Databases"
@@ -151,7 +141,6 @@ export default function Competencies() {
   );
 }
 
-/* ——— Reusable Skill Card ——— */
 function SkillCard({ icon, title, badge, desc, tags, accent = false }) {
   const badgeVariants = {
     blue: "bg-accent/10 text-accent border border-accent/30",
@@ -163,7 +152,6 @@ function SkillCard({ icon, title, badge, desc, tags, accent = false }) {
 
   return (
     <div className="card group">
-      {/* Header row: icon + title + badge */}
       <div className="flex items-start justify-between gap-3 mb-4">
         <div className="flex items-center gap-3">
           <div className="icon-box">{icon}</div>
@@ -180,13 +168,10 @@ function SkillCard({ icon, title, badge, desc, tags, accent = false }) {
         )}
       </div>
 
-      {/* Description */}
       <p className="text-xs text-text-muted leading-relaxed mb-5">{desc}</p>
 
-      {/* Divider */}
       <div className="border-t border-border-subtle mb-4" />
 
-      {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
         {tags.map((t, i) => (
           <span key={t} className="tag flex items-center gap-1.5">

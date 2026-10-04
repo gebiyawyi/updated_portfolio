@@ -14,7 +14,6 @@ export default function Architecture() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         {/* Header */}
         <div className="mb-12 text-center">
-          <p className="section-label">// 05 // SYSTEM ELEMENTS</p>
           <h2 className="section-title">Full-Stack Architecture Overview</h2>
           <p className="text-text-secondary max-w-2xl mx-auto text-sm">
             Decoupled, modular multi-tier architectural stack powering the
@@ -39,8 +38,6 @@ export default function Architecture() {
           </div>
 
           <Connector label="JSON / HTTPS" />
-
-          {/* Layer 2 */}
           <div className="arch-node flex-1">
             <div className="flex items-center justify-between">
               <span className="arch-node-label">API Layer</span>
@@ -55,8 +52,6 @@ export default function Architecture() {
           </div>
 
           <Connector label="ORM Queries" />
-
-          {/* Layer 3 */}
           <div className="arch-node flex-1">
             <div className="flex items-center justify-between">
               <span className="arch-node-label">Data</span>
@@ -70,8 +65,6 @@ export default function Architecture() {
             </p>
           </div>
         </div>
-
-        {/* Bottom principles */}
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-[10px] font-mono text-text-muted uppercase tracking-widest">
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 rounded-full bg-accent" />

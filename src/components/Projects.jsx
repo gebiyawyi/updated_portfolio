@@ -2,6 +2,7 @@ import { useState } from "react";
 import tourism from "../assets/images/tuerism.png";
 import bar from '../assets/images/bar.png'
 import coffee from '../assets/images/coffe.png';
+import customer from '../assets/images/customer.png'
 import {
   TbArrowUpRight,
   TbChevronRight,
@@ -52,7 +53,7 @@ const projects = [
   },
   {
   id: 2,
-  image: "/projects/churn-model.jpg",
+  image:customer,
   categories: ["AI/ML", "DATA SCIENCE"],
   category: "Predictive ML",
   categoryTag: "SCIKIT-LEARN · EDA",
